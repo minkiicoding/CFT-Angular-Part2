@@ -25,4 +25,7 @@ price: 500
 });
 }
 ngOnInit() {}
+selectedProduct(product: Product) {
+    alert(`Product ${product.name} selected`);
+}
 }
