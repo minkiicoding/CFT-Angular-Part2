@@ -1,16 +1,23 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Product } from '../product';
 
 @Component({
-  selector: 'app-product-item',
-  templateUrl: './product-item.component.html',
-  styleUrls: ['./product-item.component.css']
+selector: 'app-product-item',
+templateUrl: './product-item.component.html',
+styleUrls: ['./product-item.component.css']
 })
 export class ProductItemComponent implements OnInit {
-  @Input() 
-  product: any;
-  constructor() { }
+  @Input()
+  product!: Product;
 
-  ngOnInit(): void {
-  }
+@Output()
+OnSelected: EventEmitter<Product> = new EventEmitter();
+constructor() {}
 
+ngOnInit() {}
+
+select() {
+this.OnSelected.emit(this.product);
+}
 }
