@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Angular part2 Lab 1.5'`, () => {
+  it(`should have as title 'Lab 2'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Angular part2 Lab 1.5');
+    expect(app.title).toEqual('Lab 2');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Angular part2 Lab 1.5 app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('Lab 2 app is running!');
   });
 });
