@@ -1,6 +1,6 @@
 <div class="container">
     <p style="font-weight: bold;">My Tasks today</p>
-    <app-task *ngFor="let toDo of toDos" [toDoShow]="toDo" (toDoDel)="delToDoList($event)"></app-task>
+    <app-task *ngFor="let toDo of toDos" [toDoShow]="toDo" (toDoDel)="delToDoList($event)" (toDoClick)="selectedToDoList($event)"></app-task>
     <div class = "new-task">
         <p style="font-weight: bold;">Add Task</p>
         <div>
@@ -13,6 +13,12 @@
         <button (click)="addToDoList()">Add</button>
     </div>
     
+    <div class="task-detail" *ngIf="taskSelect">
+        <h4>Task: {{taskSelect.name}}</h4>
+        <b>Description: </b>{{taskSelect.description}}
+
+    </div>
+
 </div>
 
 

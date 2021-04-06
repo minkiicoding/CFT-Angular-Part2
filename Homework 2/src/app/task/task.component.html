@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" (click)="toDoSelect()"[class.selected]="isSelected"> 
     <span>{{ toDoShow.name}}</span>
-        <button (click)='delete()'>Delete</button>
+        <button (click)='toDoDelete()'>Delete</button>
     
 </div>
 

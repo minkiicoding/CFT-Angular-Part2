@@ -8,20 +8,23 @@ import { Task } from '../task';
   styleUrls: ['./task.component.css']
 })
 export class TaskComponent implements OnInit {
-  @Input() toDoShow!: Task
-  @Output() toDoDel: EventEmitter<TaskComponent> = new EventEmitter()
+  @Input() toDoShow!: Task;
+  @Output() toDoDel: EventEmitter<TaskComponent> = new EventEmitter();
+  @Output() toDoClick: EventEmitter<TaskComponent> = new EventEmitter();
+
+  isSelected: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  delete() {
+  toDoDelete() {
     this.toDoDel.emit(this);
   }
 
-  taskSelect() {
-    console.log('test');
+  toDoSelect() {
+    this.toDoClick.emit(this);
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, QueryList, ViewChildren } from '@angular/core';
 import { Task } from '../task';
 import { TaskComponent } from '../task/task.component';
 
@@ -11,10 +11,13 @@ import { TaskComponent } from '../task/task.component';
     styleUrls: ['./todo-list.component.css'],
 })
 export class ToDoListComponent {
+    @ViewChildren(TaskComponent)
+    toDoListComp!: QueryList<TaskComponent>;
         toDos: Task[] = [];
 
         taskName!: string;
         taskDescription!: string;
+        taskSelect!: Task;
         
 
         addToDoList() {       
@@ -27,12 +30,23 @@ export class ToDoListComponent {
             this.toDos.push(toDoTask);
             
     }
-        delToDoList(TaskComponent: TaskComponent) {
-            
+        delToDoList(TaskComponent: TaskComponent) {          
             this.toDos = this.toDos.filter(t => t.id !== TaskComponent.toDoShow.id)
         }
 
+        selectedToDoList(TaskComponent: TaskComponent) {
+            this.clearSelected();
+            TaskComponent.isSelected = true; 
+            this.taskSelect = TaskComponent.toDoShow;   
         
+    }
+    
+        clearSelected() {
+            this.toDoListComp.forEach((toDo: { isSelected: boolean; }) => {
+            toDo.isSelected = false;
+        })
+    }
 }
+
 
 
