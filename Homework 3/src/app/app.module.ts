@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { TreeModule } from '@circlon/angular-tree-component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ConfigComponent } from './config/config.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TreeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

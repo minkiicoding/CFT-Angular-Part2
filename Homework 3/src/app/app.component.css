@@ -1,0 +1,40 @@
+.container {
+    padding: 5px 5vw;
+}
+
+.search {
+    border: 1px solid lightgray;
+    padding: 5px 5px;
+    margin-bottom: 10px;
+}
+
+.search > div {
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    background-color: lightgray;
+    margin-left: 5px;
+    padding: 0px 5px;
+    width: 18%;
+    text-align: center;
+}
+
+.search > input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.tab-menu {
+    border-bottom: 1px solid lightgray;
+}
+
+.tab-menu > div {
+    display: inline-block;
+    padding: 10px;
+}
+
+.tab-menu > div:hover {
+    cursor: pointer;
+}

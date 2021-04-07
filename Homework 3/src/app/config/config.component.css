@@ -1,0 +1,33 @@
+.main {
+    word-wrap: break-word;
+}
+
+.main > .main-config-name {
+    font-weight: bold;
+    
+}
+
+.main > .main-config-remark {
+    font-weight: normal;
+    opacity: 0.5;
+    
+}
+
+.details {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.value > input {
+    width: 30vw;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+}
+
+.value > select {
+    width: 40vw;
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+}
