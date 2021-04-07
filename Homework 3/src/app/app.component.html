@@ -1,11 +1,11 @@
 <div class="container">
   <div class="search">
-    <input type="text" placeholder="Search Setting" />
+    <input type="text" placeholder="Search settings" />
     <div>15 Setting Found</div>
   </div>
   <div class="tab-menu">
-    <div>User Settings</div>
-    <div>Workspace Settings</div>
+    <div [class.active]="currentTab == 'user'" (click)="selectTab('user')">User Settings</div>
+    <div [class.active]="currentTab == 'workspace'" (click)="selectTab('workspace')">Workspace Settings</div>
   </div>  
   <div class="setting-panel">
     <div class="settingTreeView">

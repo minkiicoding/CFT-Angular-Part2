@@ -12,6 +12,7 @@ import { ConfigComponent } from './config/config.component';
     ConfigComponent
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     TreeModule

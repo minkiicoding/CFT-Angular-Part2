@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  currentTab: string = 'user';
   userMenuNodes = [
     {
       id: 1,
@@ -80,4 +81,8 @@ export class AppComponent {
     },
   ];
   options = {};
+
+  selectTab(tab: string) {
+    this.currentTab = tab;
+  }
 }
