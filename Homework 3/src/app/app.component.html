@@ -7,56 +7,111 @@
     <div [class.active]="currentTab == 'user'" (click)="selectTab('user')">User Settings</div>
     <div [class.active]="currentTab == 'workspace'" (click)="selectTab('workspace')">Workspace Settings</div>
   </div>  
-  <div class="setting-panel">
+  <div class="setting-panel" *ngIf="currentTab == 'user'">
     <div class="settingTreeView">
       <span>Commonly Used</span>
       <tree-root [nodes]="userMenuNodes" [options]="options"></tree-root>
     </div>
     <div class="settingConfigs">
       <h5>Commonly Used</h5>
+      
       <app-config 
-  [groupName]="'Files'" 
-  [name]="'Auto Save'" 
-  [remark]="'(Modified in: User)'" 
-  [detail]="'Controls auto save of dirty files. Read more about autosave here.'"
-  [value]="'off'">
-</app-config>
+        [groupName]="'Files'" 
+        [name]="'Auto Save'" 
+        [remark]="'(Modified in: User)'" 
+        [detail]="'Controls auto save of dirty files. Read more about autosave here.'"
+        [value]="'afterDelay'">
+      </app-config>
+      
+      <app-config 
+        [groupName]="'Editor'" 
+        [name]="'Font Size'" 
+        [detail]="'Controls the font size in pixels.'"
+        [value]="'12'">
+      </app-config>
+    
+      <app-config 
+        [groupName]="'Editor'" 
+        [name]="'Font Family'" 
+        [remark]="'(Modified in: User)'" 
+        [detail]="'Controls the font family.'"
+        [value]="'Menlo, Monaco, \'Courier New\', monospace'">
+      </app-config>
 
-<app-config 
-  [groupName]="'Editor'" 
-  [name]="'Font Size'" 
-  [detail]="'Controls the font size in pixels.'"
-  [value]="'12'">
-</app-config>
+      <app-config 
+        [groupName]="'Editor'" 
+        [name]="'Tab Size'" 
+        [detail]="'The number of spaces a tab is equal to. This setting is overridden bases on the file contents when Editor: Detect indentation is on.'"
+        [value]="'4'">
+      </app-config>
 
-<app-config 
-  [groupName]="'Editor'" 
-  [name]="'Font Family'" 
-  [remark]="'(Modified in: User)'" 
-  [detail]="'Controls the font family.'"
-  [value]="'Menlo, Monaco, \'Courier New\', monospace'">
-</app-config>
+      <app-config 
+      [groupName]="'Editor'" 
+      [name]="'Render Whitespace'" [detail]="'Controls how the editors should render whitespace characters.'"
+      [value]="'none'">
+    </app-config>
 
-<app-config 
-  [groupName]="'Editor'" 
-  [name]="'Tab Size'" 
-  [detail]="'The number of spaces a tab is equal to. This setting is overridden bases on the file contents when Editor: Detect indentation is on.'"
-  [value]="'4'">
-</app-config>
+    <app-config 
+      [groupName]="'Editor'" 
+      [name]="'Cursor Style'" 
+      [detail]="'Controls the cursor style.'"
+      [value]="'line'">
+    </app-config>
+    </div>
+  </div>
+  <div class="setting-panel" *ngIf="currentTab == 'workspace'">
+    <div class="settingTreeView">
+      <span>Commonly Used</span>
+      <tree-root [nodes]="workspaceMenuNodes" [options]="options"></tree-root>
+    </div>
+    <div class="settingConfigs">
+      <h5>Commonly Used</h5>
+    
+      <app-config 
+      [groupName]="'Files'" 
+      [name]="'Auto Save'" 
+      [remark]="'(Modified in: User)'" 
+      [detail]="'Controls auto save of dirty files. Read more about autosave here.'"
+      [value]="'off'">
+    </app-config>
+    
+    <app-config 
+      [groupName]="'Editor'" 
+      [name]="'Font Size'" 
+      [detail]="'Controls the font size in pixels.'"
+      [value]="'12'">
+    </app-config>
+  
+    <app-config 
+      [groupName]="'Editor'" 
+      [name]="'Font Family'" 
+      [remark]="'(Modified in: User)'" 
+      [detail]="'Controls the font family.'"
+      [value]="'Menlo, Monaco, \'Courier New\', monospace'">
+    </app-config>
 
-<app-config 
-  [groupName]="'Editor'" 
-  [name]="'Render Whitespace'" [detail]="'Controls how the editors should render whitespace characters.'"
-  [value]="'none'">
-</app-config>
+    <app-config 
+        [groupName]="'Editor'" 
+        [name]="'Tab Size'" 
+        [detail]="'The number of spaces a tab is equal to. This setting is overridden bases on the file contents when Editor: Detect indentation is on.'"
+        [value]="'4'">
+    </app-config>
 
-<app-config 
-  [groupName]="'Editor'" 
-  [name]="'Cursor Style'" 
-  [detail]="'Controls the cursor style.'"
-  [value]="'line'">
-</app-config>
+    <app-config 
+      [groupName]="'Editor'" 
+      [name]="'Render Whitespace'" [detail]="'Controls how the editors should render whitespace characters.'"
+      [value]="'none'">
+    </app-config>
+
+    <app-config 
+      [groupName]="'Editor'" 
+      [name]="'Cursor Style'" 
+      [detail]="'Controls the cursor style.'"
+      [value]="'line'">
+    </app-config>
+     
     </div>
   </div>
 
+    
 
